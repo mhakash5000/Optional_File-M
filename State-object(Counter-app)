@@ -34,11 +34,27 @@ class Counter extends Component{
             counter,
         })
      }
+     
     render() {
+        const style={
+            backgroundColor:'yellow',
+            padding:'5px',
+            width:'50px',
+            cursor:'pointer'
+        }
+        const myStyle={
+            backgroundColor:'red',
+            padding:'5px',
+            width:'50px',
+            cursor:'pointer'
+        }
         return (
-            <div className="container mt-5 text-center">Counter:{this.state.counter}
-                  <div onClick={this.IncrementFun}>+</div>
-                  <div onClick={this.DecrementFun}>-</div>
+            <div>Counter:{this.state.counter}
+                <div>
+                   <button style={style} onClick={this.IncrementFun}>+</button>
+                   <button style={myStyle} onClick={this.DecrementFun}>-</button>
+                </div>
+                  
             </div>
          );
     }
