@@ -1,0 +1,36 @@
+import React from 'react';
+import UseState from './Components/UseState';
+function App() {
+  return (
+    <div className="App">
+        <UseState/>
+    </div>
+  );
+}
+
+export default App;
+
+//UseState.js
+import React, { useState } from 'react';
+
+const UseState=props=>{
+  const [fruitsState,setFruitState]=useState({
+      fruits:[
+          {name:'Banana', price:'40 taka'}
+      ]
+  })
+  const clickHandler=()=>{
+    setFruitState({
+        fruits:[
+            {name:'Apple', price:'140 taka'}
+        ]
+    })
+  }
+  return(
+      <div>
+          <button onClick={clickHandler}>Change Name</button>
+          <h1>Name of {fruitsState.fruits[0].name} price of {fruitsState.fruits[0].price}</h1>
+      </div>
+  )
+}
+export default UseState;
