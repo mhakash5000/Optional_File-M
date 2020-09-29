@@ -3,9 +3,12 @@ class ToWayDataBinding extends Component{
    
 
     render(){
-        const names=['Mango','Jackfruit','banana','guava'];
+        const names=[
+            {name:'mango',price:'80 taka'},
+            {name:'orange',price:'120 taka'},
+        ];
         const items=names.map((item,inx)=>{
-        return <li key="inx">{inx}-{item}</li>
+        return <li key="inx">name: {item.name}, price: {item.price}</li>
         })
         return(
          <div className="app">
@@ -19,3 +22,4 @@ class ToWayDataBinding extends Component{
 }
 
 export default ToWayDataBinding;
+
