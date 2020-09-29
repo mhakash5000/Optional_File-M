@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+class ToWayDataBinding extends Component{
+    state={
+        age:"",
+    }
+
+
+
+    
+    formSubmit=(e)=>{
+        e.preventDefault();
+
+    };
+ 
+    render(){
+        return(
+         <div className="app">
+
+
+             <form onSubmit={this.formSubmit}>
+             <level>Age</level><br/>
+             <select onChange={(e)=>{this.setState({age:e.target.value})}} name="age">
+                 <option value="" selected disabled>Select You Age</option>
+                 <option value="20-25">20-25</option>
+                 <option value="25-30">25-30</option>
+                 <option value="30-35">30-35</option>
+             </select>
+        <h6>My Age is {this.state.age}</h6><br/>
+             <button type="text">Submit</button>
+            </form>
+
+         </div>
+        )
+    }
+}
+
+export default ToWayDataBinding;
