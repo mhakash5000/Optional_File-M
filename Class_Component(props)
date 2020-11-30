@@ -1,23 +1,34 @@
-import React from 'react';
-import './App.css';
-import Fruit from './Components/Fruit';
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Fruit name1="Mango" name2="Guava"/>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import Fun from './Components/Fun_Com';
+import Class from './Components/Class_Com';
+class App extends Component {
+
+  render() { 
+    return ( 
+      <div className="App container text-center" >
+        <h1>Hello Akash</h1>
+        <Fun name="Apple" price="120 taka" />
+        <Class course="CSE" />
+      </div>
+     );
+  }
+}
+ 
+export default App;
+
+
+import React, { Component } from 'react';
+
+class Class_Com extends Component {
+   
+    render() {
+        return (
+            <div>
+               <h1>This is Class Component</h1>
+               <h1>My Subject is {this.props.course} </h1>
+            </div>
+        )
+    }
 }
 
-export default App;
-//fruits.js
-function Fruits(props){
-   return(
-       <div>
-           <h1>My Favorite Fruit are {props.name1} and {props.name2}</h1>
-       </div>
-   )
-}
-export default Fruits
+export default Class_Com
