@@ -1,0 +1,62 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './App';
+import ReactState from './Components/ReactState';
+import reportWebVitals from './reportWebVitals';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <ReactState />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+
+
+import React, { Component } from 'react';
+
+class ReactState extends Component {
+    constructor(){
+        super();
+           this.state={
+               name:'Mh Akash',
+               age:'28',
+               like:'Coding',
+               love:'Programming',
+               major:['CSE',"EEE","CE","IT"],
+               childhoodInfo:{
+                   age:6,
+                   class:"1",
+                   childhoodLike:{
+                       like:['Cricket','Football','Kavadi'],
+                   }
+               }
+           }
+
+        
+    }
+    render() { 
+        return ( 
+           <div className="text-center">
+               <h1>Student Name : {this.state.name}</h1>
+               <h1>Student age : {this.state.age}</h1>
+               <h1>Student likes : {this.state.like}</h1>
+               <h1>Student loves : {this.state.love}</h1>
+               <h1>Student Major : {this.state.major[0]}</h1>
+        <h1>Student Childhood age : {this.state.childhoodInfo.age} years. Studied in Class {this.state.childhoodInfo.class}</h1>
+        <h1>Student Childhood likes playing : {this.state.childhoodInfo.childhoodLike.like[0]}</h1>
+           </div>
+         )
+    }
+}
+ 
+export default ReactState;
