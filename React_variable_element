@@ -1,0 +1,29 @@
+
+import React, { Component } from 'react';
+
+class ReactState extends Component{
+    constructor(){
+        super();
+        this.state={
+            name:true
+        }
+    }
+    render(){
+        return(
+   
+            this.state.name?
+            (
+                <h1 className="text-center">I am Variable element</h1>
+            )
+            :
+            (
+               <h1 className="text-center">I am not a variable element</h1>
+            )
+           
+        )
+    }
+
+}
+
+
+export default ReactState
