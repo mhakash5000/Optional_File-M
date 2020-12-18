@@ -1,0 +1,47 @@
+import React, { Component } from 'react'
+
+class Json_Data extends Component {
+ 
+    JsonCityList=(data)=>{
+        return <option value="">{data.city}</option>
+    }
+    JsonCityCode=(data)=>{
+        return <option value="">{data.code}</option>
+    }
+
+    render() {
+        const jsonList=[
+            {
+                city:'Dhaka',
+                code:'5000'
+            },
+            {
+                city:'Borishal',
+                code:'6000'
+            },
+            {
+                city:'Rongpur',
+                code:'3000'
+            },
+            {
+                city:'Cartogram',
+                code:'1000'
+            },
+            {
+                city:'Brahmanbaria',
+                code:'7000'
+            }
+        ];
+        const JsonCityList=jsonList.map(this.JsonCityList);
+        const JsonCityCode=jsonList.map(this.JsonCityCode);
+
+        return (
+               <div className="text-center">
+                   <select name="" id="">{JsonCityList}</select>
+                   <select name="" id="">{JsonCityCode}</select>
+               </div>
+        )
+    }
+}
+
+export default Json_Data
