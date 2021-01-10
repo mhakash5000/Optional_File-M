@@ -1,0 +1,185 @@
+import React, {Component} from 'react';
+import {BrowserRouter} from "react-router-dom";
+import Nav from "./Components/pages/Nav";
+import Routing from "./Components/pages/Routing";
+
+
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <Nav/>
+                <Routing/>
+            </BrowserRouter>
+        );
+    }
+}
+
+export default App;
+
+
+//Home page
+import React, {Component} from 'react';
+class Home extends Component {
+    render() {
+            return (
+                <div>
+                    <h1>Home</h1>
+                </div>
+            );
+
+        }
+}
+
+export default Home;
+
+
+
+
+//about page
+
+import React, {Component} from 'react';
+import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
+
+
+
+
+class About extends Component {
+         constructor() {
+         super();
+         this.state={
+             Country:'Bangladesh',
+
+         }
+     }
+    render() {
+        var countryName="/contact/"+this.state.Country;
+
+            return (
+                   <div>
+                      <h1>About</h1>
+                      <Button className="btn btn-dark text-light"><Link to={countryName}>Click Me</Link> </Button>
+                   </div>
+            );
+        }
+
+
+}
+
+export default About;
+
+
+
+
+
+//contact page
+import React, {Component} from 'react';
+class Contact extends Component {
+    constructor({match}) {
+        super();
+        this.state={
+            value:match.params.username
+        }
+    }
+    render() {
+        return (
+            <div>
+                <h1> welcome to Contact</h1>
+            </div>
+        );
+    }
+}
+
+export default Contact;
+
+
+
+
+//not found
+
+import React, {Component} from 'react';
+import {NavLink} from "react-router-dom";
+
+class Nav extends Component {
+    render() {
+        const myStyle={
+            color:'black',
+            fontWeight:'bold'
+        }
+
+        return (
+            <nav>
+                <div>
+                    <NavLink to="/" exact activeStyle={myStyle}>Home</NavLink>
+                    <NavLink to="/about" exact activeStyle={myStyle}>About</NavLink>
+                    <NavLink to="/contact" exact activeStyle={{color:'red',fontWeight:'bold'}}>Contact</NavLink>
+
+                </div>
+            </nav>
+        );
+    }
+}
+
+export default Nav;
+
+
+
+//Routing
+
+import React, {Component} from 'react';
+import {Switch,Route} from "react-router-dom";
+import Home from "./Home";
+import Login from "./Login";
+import Contact from "./Contact";
+import About from "./About";
+import notFound from "./notFound";
+
+class Routing extends Component {
+    render() {
+        return (
+            <div>
+                <Switch>
+                    <Route path="/" exact component={Home}/>
+                    <route path="/login" component={Login} />
+                    <Route path="/about" component={About}/>
+                    <Route path="/contact/:username" component={Contact}/>
+                    <Route  component={notFound}/>
+                </Switch>
+            </div>
+        );
+    }
+}
+
+export default Routing;
+
+
+
+//nav
+
+import React, {Component} from 'react';
+import {NavLink} from "react-router-dom";
+
+class Nav extends Component {
+    render() {
+        const myStyle={
+            color:'black',
+            fontWeight:'bold'
+        }
+
+        return (
+            <nav>
+                <div>
+                    <NavLink to="/" exact activeStyle={myStyle}>Home</NavLink>
+                    <NavLink to="/about" exact activeStyle={myStyle}>About</NavLink>
+                    <NavLink to="/contact" exact activeStyle={{color:'red',fontWeight:'bold'}}>Contact</NavLink>
+
+                </div>
+            </nav>
+        );
+    }
+}
+
+export default Nav;
+
+
