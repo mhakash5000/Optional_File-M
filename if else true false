@@ -1,0 +1,29 @@
+import React, {Component} from 'react';
+
+class ClassCom extends Component{
+    constructor(){
+        super()
+        this.state={
+            login:false
+        }
+    }
+    
+    render(){
+        if(this.state.login==false){
+            return(
+                  <div>
+                      <button className="btn-warning">Login</button>
+                  </div>
+                )
+        }else{
+            return(
+                <div>
+                    <button className="btn-warning">Logout</button>
+                </div>
+              )
+        }
+      
+    }
+
+}
+export default ClassCom;
