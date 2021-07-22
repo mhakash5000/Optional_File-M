@@ -1,0 +1,24 @@
+
+import React,{Component} from 'react'
+
+class ClassCom extends Component{
+    constructor(){
+        super()
+        this.state={
+            name:"AKaSH"
+        }
+    }
+    ChangeValue(a){
+        this.setState({name:a});
+    }
+    render(){
+        return(
+            <div>
+                <h2>{this.state.name}</h2>
+                <button onClick={this.ChangeValue.bind(this,"MH AKaSH")} className="btn btn-success">Click Me</button>
+            </div>
+
+        )
+    }
+}
+export default ClassCom;
