@@ -11,6 +11,12 @@ ChangeValue=()=>{
         var callback=function(){
             alert("I am Callback");
         }
+        
+        
+        //render and hydrate method are same
+        //ReactDom.hydrate(element,container,callback);
+        
+        
         ReactDom.render(element,container,callback);
 }
     render() {
