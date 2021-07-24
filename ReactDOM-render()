@@ -8,7 +8,10 @@ class ClassCom extends Component {
 ChangeValue=()=>{
         var container=document.getElementById('myId');
         var element=<h1>I am from ReactDom</h1>
-        ReactDom.render(element,container);
+        var callback=function(){
+            alert("I am Callback");
+        }
+        ReactDom.render(element,container,callback);
 }
     render() {
         return (
