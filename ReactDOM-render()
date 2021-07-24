@@ -1,1 +1,24 @@
 
+import React, { Component } from 'react';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import ReactDom from 'react-dom';
+
+class ClassCom extends Component {
+
+ChangeValue=()=>{
+        var container=document.getElementById('myId');
+        var element=<h1>I am from ReactDom</h1>
+        ReactDom.render(element,container);
+}
+    render() {
+        return (
+            <div>
+                  <h1 id='myId'>My name is element and container</h1>
+                  <button onClick={this.ChangeValue} className="btn-success">Click Me</button>
+              
+            </div>
+        );
+    }
+}
+
+export default ClassCom;
