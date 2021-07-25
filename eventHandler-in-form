@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+class ClassCom extends Component {
+
+   constructor(){
+       super();
+       this.state={
+        username:""
+       }
+   }
+
+    EventHandler=(e)=>{
+        var myName=e.target.name;
+        var myValue=e.target.value;
+        this.setState({[myName]:myValue});
+    }
+    OnSubmitHandler=()=>{
+        alert(this.state.username);
+    }
+    render() {
+        return (
+            <form onSubmit={this.OnSubmitHandler}>
+                <h3 className="p-3">Form</h3>
+                <h3>{this.state.username}</h3>
+                <input name="username" onChange={this.EventHandler} type="text"  placeholder="Enter Your Name" />
+                <input type="submit" value="Submit" className="btn-success" />
+            </form>
+        );
+    }
+}
+
+export default ClassCom;
