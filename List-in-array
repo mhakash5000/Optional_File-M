@@ -1,20 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class List extends Component {
-
-FruitsListMap=(a)=>{
-    return  <option>{a}</option>
-}
+class ClassCom extends Component {
+    
+    fruitList=(data)=>{
+        return <option>{data+5}</option>
+    }
     render() {
-        const FruitList=['Banana','Green Apple','Mango','Guava','Orange'];
-        const FruitListMap=FruitList.map(this.FruitsListMap);
+     
+        const number=['1','2','3','4','7','8','9','10'];
+        const allNumber=number.map(this.fruitList);
+       
+
         return (
-                <div className="text-center">
-                     <select name="" id="">{FruitListMap}</select>
-                </div>
-               
-        )
+            <div>
+                 <select>
+                     {allNumber}
+                 </select>
+            </div>
+        );
     }
 }
 
-export default List
+export default ClassCom;
