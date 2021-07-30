@@ -30,3 +30,23 @@ const myValue={
   <div>
        <h1 className="my-value">Welcome to React World</h1>
   </div>
+
+
+
+//react css by module csss
+
+
+//mycss.module.css
+.myValue{
+        background-color: red;
+        padding: 25px;
+        text-align: center;
+}
+
+import style from '../css/mycss.module.css'; in another // js file
+import style from './components/css/mycss.module.css'; // in app.js
+
+
+ <div>
+      <h1 className={style.myValue}>Welcome To React World</h1>
+ </div>
