@@ -1,2 +1,8 @@
+
+import Button from 'react-bootstrap/Button';
+//css
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//another steep
 npm install --save bootstrap
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
