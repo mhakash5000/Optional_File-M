@@ -1,0 +1,56 @@
+import logo from './logo.svg';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { MyProvider } from './components/pages/Context';
+import About from './components/pages/About';
+
+function App() {
+  return (
+    <div className="App">
+        <MyProvider value="MyProvider sent data to MyConsumer">
+          <About/>
+        </MyProvider>
+    </div>
+  );
+}
+
+export default App;
+
+
+import React from 'react';
+import { MyProvider } from './Context';
+import Home from './Home'
+const About = () => {
+    return (
+        <div>
+            <h2>
+                <Home/>
+            </h2>
+        </div>
+    );
+};
+
+export default About;
+
+import React, { Component } from 'react';
+import { MyConsumer } from './Context';
+
+class Home extends Component {
+    render() {
+        return (
+            <div>
+               <h1>
+                   <MyConsumer>
+                       {
+                           myMsg=>{
+                               return myMsg;
+                           }
+                       }
+                   </MyConsumer>
+               </h1>
+            </div>
+        );
+    }
+}
+
+export default Home;
