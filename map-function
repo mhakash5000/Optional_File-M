@@ -1,6 +1,12 @@
-//map function like foreach loop  
-//users.map((user)=>
+.........
+map function like laravel foreach loop  
+
+users.map((user)=>
+ <td>{user.id}</td>
 )
+........
+
+
 
 
 import React, { Component } from 'react';
