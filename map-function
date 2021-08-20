@@ -1,3 +1,8 @@
+//map function like foreach loop  
+//users.map((user)=>
+)
+
+
 import React, { Component } from 'react';
 class ToWayDataBinding extends Component{
    
@@ -23,3 +28,4 @@ class ToWayDataBinding extends Component{
 
 export default ToWayDataBinding;
 
+/
