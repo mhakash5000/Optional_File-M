@@ -1,0 +1,15 @@
+import React from 'react';
+
+const Course = (props) => {
+    const {name, instructor, image, price}=props.course;
+    return (
+        <div>  
+            <h1>Name: {props.course.name}</h1>
+            <h1>Instructor: {props.course.instructor}</h1>
+            <h1>Image: {props.course.image}</h1>
+            <h1>Price: {props.course.price}</h1>
+        </div>
+    );
+};
+
+export default Course;
